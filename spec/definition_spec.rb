@@ -90,9 +90,11 @@ describe('#Definition') do
 
   describe('#word') do
     it("finds the word a definition belongs to") do
-      definition = Definition.new({:clarif => "boring", :word_id => @id, :id => nil})
+      word = Word.new({:name => "fun", :id => nil})
+      word.save()
+      definition = Definition.new({:clarif => "boring", :word_id => word.id, :id => nil})
       definition.save()
-      expect(definition.word()).to(eq(@id))
+      expect(definition.word()).to(eq(word))
     end
   end
 

@@ -50,7 +50,7 @@ class Definition
   end
 
   def word
-    # Word.find(self.word_id)
+    Word.find(self.word_id)
   end
 
 end  
