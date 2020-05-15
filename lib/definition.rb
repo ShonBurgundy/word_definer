@@ -11,7 +11,7 @@ class Definition
   end
 
   def ==(def_to_compare)
-    # (self.name() == def_to_compare.name()) && (self.word_id() == def_to_compare.word())
+    (self.clarif() == def_to_compare.clarif()) && (self.word_id() == def_to_compare.word_id())
   end
 
 
