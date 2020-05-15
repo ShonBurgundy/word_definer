@@ -9,7 +9,7 @@ class Word
   end
 
   def self.all
-  # code
+   @@words.values()
   end
 
   def save
