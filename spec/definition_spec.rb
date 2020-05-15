@@ -72,7 +72,7 @@ describe('#Definition') do
       definition1 = Definition.new({:clarif => "goodtime", :word_id => @id, :id => nil})
       definition1.save()
       definition.delete()
-      expect(Definition.all).to(eq([definition1])) +1
+      expect(Definition.all).to(eq([definition1]))
     end
   end
 
