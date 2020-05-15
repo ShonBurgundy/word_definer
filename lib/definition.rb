@@ -22,4 +22,8 @@ class Definition
     @@definitions.values()
   end
 
+  def self.clear
+
+  end  
+
 end  

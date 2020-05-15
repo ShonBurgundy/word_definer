@@ -26,9 +26,19 @@ describe('#Definition') do
       definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
       definition.save()
       definition1 = Definition.new({:clarif => "goodtime", :word_id => @id, :id => nil})
-      definition.save()
       definition1.save()
-      expect(Definition.all).to(eq([definition,definition1])) + 10
+      expect(Definition.all).to(eq([definition,definition1]))
+    end
+  end
+
+  describe('.clear') do
+    it("clear all definitions") do
+      definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
+      definition.save()
+      definition1 = Definition.new({:clarif => "goodtime", :word_id => @id, :id => nil})
+      definition1.save()
+      Definition.clear()
+      expect(Definition.all).to(eq([]))
     end
   end
 
