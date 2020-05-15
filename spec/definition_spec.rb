@@ -20,10 +20,16 @@ describe('#Definition') do
       expect(Definition.all).to(eq([definition]))
     end
   end
-  # describe('.all') do
-  #   it("return a list of all definitions") do
-      
-  #   end
-  # end
+
+  describe('.all') do
+    it("return a list of all definitions") do
+      definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
+      definition.save()
+      definition1 = Definition.new({:clarif => "goodtime", :word_id => @id, :id => nil})
+      definition.save()
+      definition1.save()
+      expect(Definition.all).to(eq([definition,definition1])) + 10
+    end
+  end
 
 end
