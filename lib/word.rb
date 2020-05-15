@@ -13,7 +13,7 @@ class Word
   end
 
   def save
-    # code
+    @@words[self.id] = Word.new({:name => self.name, :id => self.id})
   end
 
   def ==(word_to_compare)
