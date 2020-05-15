@@ -22,6 +22,13 @@ describe ('#Word') do
   end
 
   describe('.clear') do
-    it("clears all words")
+    it("clears all words") do
+      word = Word.new({:name => "fun", :id => nil})
+      word.save()
+      word2 = Word.new({:name => "boring", :id => nil})
+      word2.save()
+      Word.clear()
+      expect(Word.all).to(eq[])
+    end
   end
 end
