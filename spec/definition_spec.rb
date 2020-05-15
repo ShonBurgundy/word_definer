@@ -60,11 +60,21 @@ describe('#Definition') do
     it("updates an artist by id") do
       definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
       definition.save()
-      definition.update({:clarif => "bliss", :word_id => @id})
+      definition.update("bliss", @id)
       expect(definition.clarif).to(eq("bliss"))
     end
   end
 
+  describe('#delete') do
+    it("deletes an artist by id") do
+      definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
+      definition.save()
+      definition1 = Definition.new({:clarif => "goodtime", :word_id => @id, :id => nil})
+      definition1.save()
+      definition.delete()
+      expect(Definition.all).to(eq([definition1])) +1
+    end
+  end
 
 
 end

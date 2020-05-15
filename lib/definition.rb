@@ -33,6 +33,10 @@ class Definition
   def update(clarif, word_id)
     self.clarif = clarif
     self.word_id = word_id
-    @@definitions[self.id] = Definition.new(self.clarif, self.word_id, id)
   end
+
+  def delete
+    # @@definitions.delete(self.id)
+  end
+
 end  
