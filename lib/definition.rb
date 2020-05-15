@@ -14,6 +14,12 @@ class Definition
     (self.clarif() == def_to_compare.clarif()) && (self.word_id() == def_to_compare.word_id())
   end
 
+  def save
+    # @@definitions[self.id] = self
+  end  
 
+  def self.all
+    # @@definitions.values()
+  end
 
 end  
