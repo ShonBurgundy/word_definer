@@ -46,4 +46,14 @@ describe('#Definition') do
     end
   end
 
+  describe(".find") do
+    it("finds a definition by id") do
+      definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
+      definition.save()
+      definition1 = Definition.new({:clarif => "goodtime", :word_id => @id, :id => nil})
+      definition1.save()
+      expect(Definition.find(definition.id)).to(eq(definition))
+    end
+  end
+
 end

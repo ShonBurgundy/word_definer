@@ -24,6 +24,10 @@ class Definition
 
   def self.clear
     @@definitions = {}
-  end  
+  end
+  
+  def self.find(id)
+    # @@definitions[id]
+  end
 
 end  
