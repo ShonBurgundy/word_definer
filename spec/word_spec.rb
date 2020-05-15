@@ -44,6 +44,16 @@ end
     end
   end
 
+  describe('.find') do
+    it("finds a word") do
+      word = Word.new({:name => "fun", :id => nil})
+      word.save()
+      word2 = Word.new({:name => "boring", :id => nil})
+      word2.save()
+      expect(Word.find(word.id)).to(eq(word))
+    end
+  end
+
 
 
 end
