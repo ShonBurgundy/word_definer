@@ -15,11 +15,11 @@ class Definition
   end
 
   def save
-    # @@definitions[self.id] = self
+    @@definitions[self.id] = self
   end  
 
   def self.all
-    # @@definitions.values()
+    @@definitions.values()
   end
 
 end  
