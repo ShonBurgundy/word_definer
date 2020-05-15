@@ -1,0 +1,15 @@
+<h1>Welcome to Word Definer</h1>
+<h3> Add a new word below! Click on them to create, read, update and delete their definitions</h3>
+
+<% if @words.any? %>
+
+  <ul>
+    <% @words.each do |word| %>
+      <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p> There are no words yet! </p>
+<% end %>
+
+<a href="/word/new">Add a new word</a>

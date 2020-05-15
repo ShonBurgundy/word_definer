@@ -34,7 +34,7 @@ class Word
   end
 
   def definitions
-    # code
+    # Definition.find_by_word
   end  
   
   
