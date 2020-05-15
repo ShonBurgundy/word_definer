@@ -30,7 +30,7 @@ class Word
   # end
 
   def self.find(id)
-    # code
+    @@words[id]
   end
 
   def definitions
