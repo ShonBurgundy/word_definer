@@ -1,7 +1,7 @@
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/word')
-# require('./lib/definition')
+require('./lib/definition')
 require('pry')
 also_reload('lib/**/*.rb')
 
@@ -32,10 +32,7 @@ get('/words/:id') do
   erb(:word)
 end
 
-get('/words/:id/edit') do
-  @word = Word.find(params[:id].to_i())
-  erb(:edit_word)
-end
+
 
 # patch('/words/:id') do
 #   @word = Word.find(params[:id].to_i())
@@ -44,4 +41,36 @@ end
 #   erb(:homepage)
 # end
 
+# -------------- DEFINITION --------------
 
+get('/words/:id/definitions/:definition_id/edit') do
+  @word = Word.find(params[:id].to_i())
+  @definition = Definition.find(params[:definition_id].to_i())
+  erb(:edit_definition)
+end
+
+get('/words/:id/definitions/:definition_id') do
+  @definition = Definition.find(params[:definition_id].to_i())
+  erb(:edit_definition)
+end
+
+post('/words/:id/definitions') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.new({:clarif => params[:clarif], :word_id => @word.id, :id => nil})
+  definition.save()
+  erb(:word)
+end
+
+patch('/words/:id/definitions/:definition_id') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.update(params[:clarif], @word.id)
+  erb(:word)
+end
+
+delete('/words/:id/definitions/:definition_id') do
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.delete
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
+end

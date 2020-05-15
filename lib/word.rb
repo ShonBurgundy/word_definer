@@ -25,10 +25,6 @@ class Word
     @@total_rows = 0
   end
 
-  # def update(name)
-  #   # code
-  # end
-
   def self.find(id)
     @@words[id]
   end
@@ -36,6 +32,5 @@ class Word
   def definitions
     Definition.find_by_word(self.id)
   end  
-  
   
 end  
