@@ -21,4 +21,7 @@ describe ('#Word') do
     end
   end
 
+  describe('.clear') do
+    it("clears all words")
+  end
 end
