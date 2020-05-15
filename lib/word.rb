@@ -17,7 +17,7 @@ class Word
   end
 
   def ==(word_to_compare)
-    # code
+    self.name() == word_to_compare.name()
   end
 
   def self.clear
