@@ -56,4 +56,15 @@ describe('#Definition') do
     end
   end
 
+  describe("#update") do
+    it("updates an artist by id") do
+      definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
+      definition.save()
+      definition.update({:clarif => "bliss", :word_id => @id})
+      expect(definition.clarif).to(eq("bliss"))
+    end
+  end
+
+
+
 end
