@@ -4,12 +4,16 @@ require 'word'
 
 describe ('#Word') do
 
+before(:each) do
+  Word.clear()
+end  
 
- describe('.all') do
-  it('returns an empty array when there are no words') do
-    expect(Word.all).to(eq([]))
+
+  describe('.all') do
+    it('returns an empty array when there are no words') do
+      expect(Word.all).to(eq([]))
+    end
   end
- end
 
   describe('#save') do
     it("saves a word that has been created") do
@@ -28,7 +32,18 @@ describe ('#Word') do
       word2 = Word.new({:name => "boring", :id => nil})
       word2.save()
       Word.clear()
-      expect(Word.all).to(eq[])
+      expect(Word.all).to(eq([]))
     end
   end
+
+  describe('#==') do
+    it("is the same word if it has the same attributes as another") do
+      word = Word.new({:name => "fun", :id => nil})
+      word2 = Word.new({:name => "fun", :id => nil})
+      expect(word).to(eq(word2))
+    end
+  end
+
+
+
 end

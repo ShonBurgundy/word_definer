@@ -21,7 +21,8 @@ class Word
   end
 
   def self.clear
-    # code
+    @@words = {}
+    @@total_rows = 0
   end
 
   # def update(name)
