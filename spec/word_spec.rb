@@ -7,6 +7,7 @@ describe ('#Word') do
 
 before(:each) do
   Word.clear()
+  Definition.clear()
 end  
 
 
@@ -59,9 +60,9 @@ end
     it("returns a words definition") do
       word = Word.new({:name => "fun", :id => nil})
       word.save()
-      definition = Definition.new({:clarif => "bliss", :word_id => @id, :id => nil})
+      definition = Definition.new({:clarif => "bliss", :word_id => word.id, :id => nil})
       definition.save()
-      definition1 = Definition.new({:clarif => "goodtime", :word_id => @id, :id => nil})
+      definition1 = Definition.new({:clarif => "goodtime", :word_id => word.id, :id => nil})
       definition1.save()
       expect(word.definitions).to(eq([definition, definition1]))
     end

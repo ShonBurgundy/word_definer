@@ -34,7 +34,7 @@ class Word
   end
 
   def definitions
-    # Definition.find_by_word
+    Definition.find_by_word(self.id)
   end  
   
   
