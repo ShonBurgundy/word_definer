@@ -4,6 +4,10 @@ require 'word'
 require 'definition'
 
 describe('#Definition') do
+
+  before(:each) do
+    Definition.clear()
+  end
   
   describe('#==') do
     it("is the same definition if it has the same attributes as another definition") do
