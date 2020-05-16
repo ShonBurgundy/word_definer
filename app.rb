@@ -32,15 +32,6 @@ get('/words/:id') do
   erb(:word)
 end
 
-
-
-# patch('/words/:id') do
-#   @word = Word.find(params[:id].to_i())
-#   @word.update(params[:name])
-#   @words = Word.all
-#   erb(:homepage)
-# end
-
 # -------------- DEFINITION --------------
 
 get('/words/:id/definitions/:definition_id/edit') do
