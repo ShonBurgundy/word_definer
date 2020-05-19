@@ -56,6 +56,15 @@ end
     end
   end
 
+  describe('#update') do
+    it("updates a word by id") do
+      word = Word.new({:name => "fun", :id => nil})
+      word.save()
+      word.update("boring")
+      expect(word.name).to(eq("boring"))
+    end
+  end
+
   describe('#delete') do
     it("deletes a word by id") do 
       word = Word.new({:name => "fun", :id => nil})
