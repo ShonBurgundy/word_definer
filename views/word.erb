@@ -22,5 +22,19 @@
       <button type="submit" class="btn btn-info">Add Definition</button>
     </form>
 
+    <form action="/words/<%= @word.id %>" method="post">
+      <input name="_method" type="hidden" value="patch">
+
+      <input id="name" name="name" type="text" placeholder="Edit Word">
+      <button type="submit" class="btn btn-danger">Edit</button>
+    </form>
+
+
+    <form action="/words/<%= @word.id %>" method="post">
+      <input name="_method" type="hidden" value="delete">
+
+      <button type="submit" class="btn btn-danger">Delete Word</button>
+    </form>  
+
     <a href="/">Return to homepage.</a>
 
