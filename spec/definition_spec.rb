@@ -57,7 +57,7 @@ describe('#Definition') do
   end
 
   describe("#update") do
-    it("updates an artist by id") do
+    it("updates a definition by id") do
       definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
       definition.save()
       definition.update("bliss", @id)
@@ -66,7 +66,7 @@ describe('#Definition') do
   end
 
   describe('#delete') do
-    it("deletes an artist by id") do
+    it("deletes a definition by id") do
       definition = Definition.new({:clarif => "joy", :word_id => @id, :id => nil})
       definition.save()
       definition1 = Definition.new({:clarif => "goodtime", :word_id => @id, :id => nil})

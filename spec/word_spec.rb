@@ -56,6 +56,17 @@ end
     end
   end
 
+  describe('#delete') do
+    it("deletes a word by id") do 
+      word = Word.new({:name => "fun", :id => nil})
+      word.save()
+      word2 = Word.new({:name => "boring", :id => nil})
+      word2.save()
+      word.delete()
+      expect(Word.all).to(eq([word2]))
+    end
+  end
+
   describe('#definitions') do
     it("returns a words definition") do
       word = Word.new({:name => "fun", :id => nil})

@@ -1,4 +1,3 @@
-  
 require('capybara/rspec')
 require('./app')
 Capybara.app = Sinatra::Application
@@ -14,8 +13,8 @@ describe('create a word path', {:type => :feature}) do
   end
 end
 
-describe('create an artist path', {:type => :feature}) do
-  it('creates an artist and then goes to the artist page') do
+describe('create an definition path', {:type => :feature}) do
+  it('creates an definition and then goes to the definition page') do
     word = Word.new({:name => "fun", :id => nil})
     word.save
     visit("/words/#{word.id}")
