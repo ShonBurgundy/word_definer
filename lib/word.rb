@@ -13,11 +13,11 @@ class Word
   end
 
   def save
-    @@words[self.id] = self
+    @@words[@id] = self
   end
 
   def ==(word_to_compare)
-    self.name() == word_to_compare.name()
+    @name == word_to_compare.name()
   end
 
   def self.clear
@@ -30,15 +30,15 @@ class Word
   end
 
   def definitions
-    Definition.find_by_word(self.id)
+    Definition.find_by_word(@id)
   end
 
-  def update
-    
+  def update(name)
+    @name = name
   end
 
   def delete
-    @@words.delete(self.id)
+    @@words.delete(@id)
   end
   
 end  

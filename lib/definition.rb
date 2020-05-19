@@ -15,7 +15,7 @@ class Definition
   end
 
   def save
-    @@definitions[self.id] = self
+    @@definitions[@id] = self
   end  
 
   def self.all
@@ -31,12 +31,12 @@ class Definition
   end
 
   def update(clarif, word_id)
-    self.clarif = clarif
-    self.word_id = word_id
+    @clarif = clarif
+    @word_id = word_id
   end
 
   def delete
-    @@definitions.delete(self.id)
+    @@definitions.delete(@id)
   end
 
   def self.find_by_word(wrd_id)
@@ -50,7 +50,7 @@ class Definition
   end
 
   def word
-    Word.find(self.word_id)
+    Word.find(@word_id)
   end
 
 end  
